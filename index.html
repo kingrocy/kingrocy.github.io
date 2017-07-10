@@ -239,6 +239,310 @@
             
               
                 
+                <a class="post-title-link" href="/2017/07/02/mysql开启远程连接服务/" itemprop="url">
+                  mysql开启远程连接服务
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-07-02T15:00:01+08:00" content="2017-07-02">
+              2017-07-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/07/02/mysql开启远程连接服务/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/02/mysql开启远程连接服务/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+		  
+			
+			&nbsp; | &nbsp;
+			<span id="/2017/07/02/mysql开启远程连接服务/"class="leancloud_visitors" data-flag-title="mysql开启远程连接服务">
+					 &nbsp;阅读次数
+					</span>
+			
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这几天在linux上部署我的项目，项目数据库配置的是我windows下面的数据库。但是项目跑起来却无法连接上数据库。后来发现原来是mysql没有开启远程连接服务，不能根据本地ip来连接。先给出解决方法：</p>
+<pre><code>1、打开cmd，进入mysql安装目录下的bin文件夹
+
+2、用root用户登录 mysql -u root -p 再输入密码
+
+3、打开远程登录的权限   
+    grant all privileges on *.* to root@&quot;%&quot; identified by &apos;password&apos; with grant option;
+
+4、刷新权限  flush privileges;
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/17/linux下搭建web环境/" itemprop="url">
+                  linux搭建web环境
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-06-17T11:00:01+08:00" content="2017-06-17">
+              2017-06-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/17/linux下搭建web环境/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/17/linux下搭建web环境/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+		  
+			
+			&nbsp; | &nbsp;
+			<span id="/2017/06/17/linux下搭建web环境/"class="leancloud_visitors" data-flag-title="linux搭建web环境">
+					 &nbsp;阅读次数
+					</span>
+			
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>linux上开发环境搭建较为麻烦，现对于常用的一些环境进行搭建与记录，方便日后进行查看。</p>
+<p>在这之前，先介绍一下vim的使用</p>
+<pre><code>1、首先vim打开一个文件，当需要对文件进行修改时，按I键，即可进入“插入状态”  然后就可对文件进行操作
+
+
+2、当对文件改动完成之后，有以下几个操作：
+
+     1、保存退出  先按ESC 再按： 再按 w(write) q(quit) 或者先按 ESC 再按： 再按 x  
+
+                    （ x 相当于 w q ）
+
+     2、不保存退出  先按ESC 再按： 再按 q！
+
+     3、正常退出（当文件没有被修改时才可使用） 先按ESC 再按： 再按 q
+</code></pre><p><strong>1、jdk的安装配置</strong></p>
+<p><strong>2、tomcat的安装配置</strong></p>
+<pre><code>1、从网上下载tomcat linux的安装包 如：apache-tomcat-7.0.79.tar.gz
+2、通过Xftp 将此安装包复制到linux下的指定位置上
+3、 cd /usr/local/server/
+    tar -zxvf  /usr/local/server/apache-tomcat-7.0.79.tar.gz
+4、进入tomcat的bin目录下，启动tomcat  ./startup.sh
+5、进入tomcat的网址看看tomcat是否已经成功启动
+
+注意事项：tomcat启动后，却访问不了主页。是因为linux的防火墙没有关，将防火墙关闭就可以了。
+关闭防火墙命令：/sbin/service iptables stop
+(关闭防火墙需要root用户来关闭，，普通用户关闭不了。。。而且关闭防火墙重启失效，。。。。)
+
+
+备注：linux防火墙有两种方式开关闭。
+
+     第一种：重启后生效
+            开启： chkconfig iptables on
+            关闭： chkconfig iptables off 
+
+      第二种：即时生效，重启后失效
+            开启： service iptables start
+            关闭： service iptables stop
+</code></pre><p><strong>3、mysql的安装配置</strong></p>
+<p><strong>4、redis的安装配置</strong></p>
+<pre><code>1、下载redis  并解压  tar -zxvf redis-3.2.9.tar.gz  我是将redis解压到/usr/local/server/redis-3.2.9
+
+2、在redis解压目录下 分别执行 make 、 make install命令
+
+3、在前两个步骤下，redis已经安装成功了； 
+
+  在这里说两个东西  /usr/local/bin 这个目录下存放了linux安装的一些程序的启动文件 redis的启动需要进入此目录下
+
+  在启动redis的时候 我们需要指定redis.conf
+
+  一般我们需要拷贝一份redis.conf 然后改动这个redis.conf文件 通过此文件来启动redis
+
+4、启动redis
+
+   进入/usr/local/bin 执行 redis-server /myredis/redis.conf来启动redis
+
+5、启动好redis之后，想进入redis
+
+   执行 redis-cli -p 6379 
+
+6、退出redis  执行 shutdown  然后exit
+</code></pre><p><strong>5、nginx的安装配置</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/17/数据库索引/" itemprop="url">
                   数据库索引解析
                 </a>
@@ -1480,745 +1784,11 @@ netstat -tln | grep 8060   查看端口8060的使用情况
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/20/单例设计模式/" itemprop="url">
-                  单例设计模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-20T15:41:39+08:00" content="2017-02-20">
-              2017-02-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/02/20/单例设计模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/20/单例设计模式/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-		  
-			
-			&nbsp; | &nbsp;
-			<span id="/2017/02/20/单例设计模式/"class="leancloud_visitors" data-flag-title="单例设计模式">
-					 &nbsp;阅读次数
-					</span>
-			
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="单线程下的单例模式：多线程下不安全"><a href="#单线程下的单例模式：多线程下不安全" class="headerlink" title="单线程下的单例模式：多线程下不安全"></a>单线程下的单例模式：多线程下不安全</h3><pre><code>class Singleton{
-
-    private static Singleton instance=null;        
-    private Singleton(){
-
-    }        
-    public static Singleton getInstance(){            
-        if(instance==null)
-                instance=new Singleton();
-        return instance;
-    }
-}
-</code></pre><p>测试代码：</p>
-<pre><code>    public class TestSingleton implements Runnable {
-    public static void main(String[] args) {
-            TestSingleton t=new TestSingleton();
-
-            Thread t1=new Thread(t);
-            Thread t2=new Thread(t);
-            Thread t3=new Thread(t);
-            Thread t4=new Thread(t);
-            t1.start();
-            t2.start();
-            t3.start();
-            t4.start();
-    }
-
-    public void run() {
-        while(true){
-            System.out.println(Singleton.getInstance());
-            try {
-                Thread.sleep(10);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
-</code></pre><p>输出结果：</p>
-<blockquote>
-<pre><code>TestAlgorithm.Singleton2@499e5463
-TestAlgorithm.Singleton2@499e5463
-TestAlgorithm.Singleton2@2980e8cb
-TestAlgorithm.Singleton2@10482bba
-TestAlgorithm.Singleton2@2980e8cb
-TestAlgorithm.Singleton2@2980e8cb
-TestAlgorithm.Singleton2@2980e8cb
-TestAlgorithm.Singleton2@2980e8cb
-</code></pre></blockquote>
-<p>测试选中的结果是程序输出结果的前几行；因为在程序刚开始执行时，四个进程都会判断出此时instance对象为null，所以执行Singleton.getInstance()方法获取instance对象；观察结果可知，四个进程创建了三个instance对象，所以这个单例不满足多线程下的要求。</p>
-<p>所以在创建instance对象时，我们需要加一把锁，保证同时只能有一个进程才能创建instance对象</p>
-<h3 id="多线程下的单例模式：线程安全"><a href="#多线程下的单例模式：线程安全" class="headerlink" title="多线程下的单例模式：线程安全"></a>多线程下的单例模式：线程安全</h3><pre><code>class Singleton{
-
-    private static Singleton instance=null;
-
-    private Singleton(){
-
-    }
-
-    public static Singleton getInstance(){
-
-        if(instance==null){            
-            synchronized(Singleton.class){//加锁，如果两个线程同时进来
-                if (instance==null) {//防止第一个线程创建完对象后释放锁，第二个线程进入重复创建
-                    instance=new Singleton();                    
-                }            
-            }
-        }                
-        return instance;
-    }
-}
-</code></pre><p>测试一下：<br>&gt;<br>    TestAlgorithm.Singleton@399ae135<br>    TestAlgorithm.Singleton@399ae135<br>    TestAlgorithm.Singleton@399ae135<br>    TestAlgorithm.Singleton@399ae135<br>    TestAlgorithm.Singleton@399ae135<br>多线程下也是线程安全的。。。</p>
-<h3 id="其实还有一种终极方法可以更加完美的实现单例模式：使用enum-枚举"><a href="#其实还有一种终极方法可以更加完美的实现单例模式：使用enum-枚举" class="headerlink" title="其实还有一种终极方法可以更加完美的实现单例模式：使用enum(枚举)"></a>其实还有一种终极方法可以更加完美的实现单例模式：使用enum(枚举)</h3><p><em>使用enum关键字来实现单例模式的好处是这样非常简洁，并且无偿地提供了序列化机制，绝对防止多次实例化，即使是在面对复杂的序列化或者反射攻击的时候。——来自《Effective Java》</em></p>
-<p>代码：</p>
-<pre><code>public enum SingletonByEnum {
-    INSTANCE;// 唯一实例
-
-   public void print() {
-       System.out.println(INSTANCE);
-   }
-
-   public static void main(String[] args) {
-       //获取该实例：
-       SingletonByEnum singleton = SingletonByEnum.INSTANCE;
-       singleton.print();
-   }
-}
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/19/java知识点复习总结-常见面试题（此文常更）/" itemprop="url">
-                  java知识点复习总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-19T21:21:01+08:00" content="2017-02-19">
-              2017-02-19
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/02/19/java知识点复习总结-常见面试题（此文常更）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/19/java知识点复习总结-常见面试题（此文常更）/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-		  
-			
-			&nbsp; | &nbsp;
-			<span id="/2017/02/19/java知识点复习总结-常见面试题（此文常更）/"class="leancloud_visitors" data-flag-title="java知识点复习总结">
-					 &nbsp;阅读次数
-					</span>
-			
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="注：以下纯属个人心得，不足之处还望指点"><a href="#注：以下纯属个人心得，不足之处还望指点" class="headerlink" title="注：以下纯属个人心得，不足之处还望指点"></a><font color="red">注：以下纯属个人心得，不足之处还望指点</font></h3><h3 id="一、基本语法"><a href="#一、基本语法" class="headerlink" title="一、基本语法"></a>一、基本语法</h3><ol>
-<li><p>数据类型： </p>
-<ol>
-<li><p>基本数据类型：</p>
-<pre><code>1. 数值型: 
-        1. 整数类型：byte,short,int,long
-        2. 浮点类型：float,double
-2. 字符型: char
-3. 布尔型: boolean
-- java中的整型常量默认为int型，若想声明一个Long型常量，需在常量后加&apos;l&apos;或&apos;L&apos;;
-- java的浮点数常量默认为double，若想声明一个float常量，需在常量后加&apos;f&apos;或&apos;F&apos;
-</code></pre></li>
-<li><p>引用数据类型：</p>
-<pre><code>1.类 class(我们常说的字符串就是String类，是引用数据类型；而不是基本数据类型)
-2.接口 interface
-3.数组 []
-</code></pre></li>
-<li><p>基本数据类型的转换</p>
-<ol>
-<li><p>自动类型转换：容量小的数据类型自动转为容量大的数据类型</p>
-<pre><code>*数据类型按容量大小排序（由小到大）：（char）、byte、short、int、long、float、double
-*char容量较小，但不是数值型，byte,short,char之间不会相互转换，他们三者在计算时首先转换为int类型。
-*有多种类型的数据混合运算时，系统首先自动将所有数据转换成容量最大的那种数据类型，然后再进行计算
-*当把任何基本类型的值和字符串值进行连接运算时(+)，基本类型的值将自动转化为字符串类型。 
-</code></pre></li>
-<li><p>强制类型转换：</p>
-<p> 自动类型转换的逆过程，将容量大的数据类型转换为容量小的数据类型，使用时需要加上（要转换的类型），可能会造成精度缺失<br> 通常，字符串不能直接转换为基本类型，但通过基本类型对应的包装类则可以实现把字符串转换成基本类型。</p>
-</li>
-</ol>
-<p>重点：String类型解析</p>
-<p> 1.String类是一个不可变类，String对象创建出来就不可能被改变，创建出的字符串将存放在字符串常量池，保证每个字符串常量只有一个<br> 2.如字符串经常被改变，可用stringbuffer        </p>
-</li>
-</ol>
-</li>
-<li><p>变量</p>
-<pre><code>1. 成员变量：
-            1. 实例变量：不以static修饰
-            2. 类变量：以static修饰
-2. 局部变量：
-            1. 形参：方法签名中定义的变量
-            2. 方法局部变量：方法内定义
-            3. 代码块局部变量：代码块内定义
-</code></pre><p> <strong>注：局部变量除了形参之外，都得显式初始化；</strong></p>
-</li>
-<li><p>运算符</p>
-<ol>
-<li>前++和后++的区别：前++先运算后取值，后++先取值后运算；前–和后–也是一样；</li>
-<li>&amp;和&amp;&amp;的区别：(‘|’和’||’同理)          <ol>
-<li>&amp;逻辑与，左边无论真假，右边都进行运算；</li>
-<li>&amp;&amp;短路与，如果左边为真，右边参与运算，如果左边为假，那么右边不参与运算</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<p>4.流程控制</p>
-<p>break和continue的区别与作用：</p>
-<ul>
-<li>break语句用于终止某个语句块的执行    <blockquote>
-<pre><code>  L1:{
-    L2:{
-        L3:{
-            break L2;
-        }
-    }        
-}
-</code></pre></blockquote>
-</li>
-</ul>
-<ul>
-<li>continue语句用于跳过某个循环语句块的一次执行 </li>
-</ul>
-<ul>
-<li>return直接结束整个方法，不论这个return 处于多少层循环之内；</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/kingrocy/markdown-pic/master/image/java执行过程.png" alt=""></p>
-<h3 id="二、面向对象"><a href="#二、面向对象" class="headerlink" title="二、面向对象"></a>二、面向对象</h3><h4 id="面向对象特征：抽象、封装、继承、多态"><a href="#面向对象特征：抽象、封装、继承、多态" class="headerlink" title="面向对象特征：抽象、封装、继承、多态"></a>面向对象特征：抽象、封装、继承、多态</h4><ul>
-<li><p>谈谈对多态的理解:</p>
-<p>   所谓多态就是指程序中定义的引用变量所指向的具体类型和通过该引用变量发出的方法调用在编程时并不确定，而是在程序运行期间才确定，即一个引用变量倒底会指向哪个类的实例对象，该引用变量发出的方法调用到底是哪个类中实现的方法，必须在由程序运行期间才能决定。因为在程序运行时才确定具体的类，这样，不用修改源程序代码，就可以让引用变量绑定到各种不同的类实现上，从而导致该引用调用的具体方法随之改变，即不修改程序代码就可以改变程序运行时所绑定的具体代码，让程序可以选择多个运行状态，这就是多态性。</p>
-</li>
-<li><p>重载和重写的区别:</p>
-<p>  1.重写：子类重写父类，是子类和父类之间多态性的一种表现；</p>
-<p>  子类重写父类的规则：</p>
-<pre><code>1.子类重写的方法不能比父类的方法有更严格的访问级别。
-    比如父类的方法是protected，子类重写的方法必须是protected或者是public。
-2.子类重写方法的参数列表必须与父类被重写的方法相同，如果子类方法的参数与父类
-    对应的方法不同，是重载
-3.返回类型必须与被重写方法相同
-4.子类的重写方法不能抛出新的异常或者比父类被重写的方法更广的异常。
-</code></pre><p>  2.重载：如果在一个类中定义了多个同名的方法，它们或有不同的参数个数或有不同的参数类型，则称为方法的重载(Overloading)。</p>
-<p>  Overloaded的方法是可以改变返回值的类型</p>
-</li>
-<li><p>抽象类与接口</p>
-<pre><code>1 抽象类里可以有构造方法，而接口内不能有构造方法。
-2 抽象类中可以有普通成员变量，而接口中不能有普通成员变量。接口中只能有常量；
-3 抽象类中可以包含非抽象的普通方法，而接口中所有的方法必须是抽象的，不能有非抽象的普通方法。
-4 抽象类中的抽象方法的作用域可以为任意，但接口中的抽象方法只能是public类型的。
-5 抽象类中可以包含静态方法，接口内不能包含静态方法。
-6 一个类可以实现多个接口，但只能继承一个抽象类。
-</code></pre></li>
-<li><p>类加载时初始化顺序：</p>
-<pre><code>父类--静态变量
-父类--静态初始化块
-子类--静态变量
-子类--静态初始化块
-父类--变量
-父类--初始化块
-父类--构造器
-子类--变量
-子类--初始化块
-子类--构造器
-</code></pre><p>静态变量、静态初始化块，变量、初始化块初始化了顺序取决于它们在类中出现的先后顺序。</p>
-</li>
-</ul>
-<p>问题1：当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递?</p>
-<blockquote>
-<p>答：是值传递。Java 编程语言只有值传递参数。当一个对象实例作为一个参数被传递到方法中时，参数的值就是对该对象的引用。对象的内容可以在被调用的方法中改变，但对象的引用是永远不会改变的</p>
-</blockquote>
-<h3 id="三、集合"><a href="#三、集合" class="headerlink" title="三、集合"></a>三、集合</h3><p><img src="https://raw.githubusercontent.com/kingrocy/markdown-pic/master/image/集合继承关系.png" alt=""></p>
-<p><strong>Iterator: Iterator对象称为迭代器(设计模式的一种)，主要用于遍历 Collection 集合中的元素。</strong></p>
-<pre><code>所有实现了Collection接口的集合类都有一个iterator()方法，用以返回一个实现了Iterator接口的对象。
-
-Iterator 仅用于遍历集合，Iterator 本身并不提供承装对象的能力。如果需要创建 Iterator 对象，则必须有一个被迭代的集合。
-</code></pre><p><strong>List:    有序可以重复</strong></p>
-<pre><code>List集合类中元素有序、且可重复，集合中的每个元素都有其对应的顺序索引。
-List容器中的元素都对应一个整数型的序号记载其在容器中的位置，可以根据序号存取容器中的元素。
-List接口的实现类常用的有：ArrayList、LinkedList和Vector。
-</code></pre><p><strong>List的实现类：</strong></p>
-<pre><code>ArrayList：最底层是用数组实现的，线程不安全
-LinkedList：基于链表结构实现，很少使用
-Vector: 古老的集合类，是线程安全的，基本使用
-</code></pre><p><strong>Set:    无序不可重复,Set中常用的方法都是Collection下定义的。</strong></p>
-<pre><code>Set接口是Collection的子接口，set接口没有提供额外的方法
-Set 集合不允许包含相同的元素，如果试把两个相同的元素加入同一个 Set 集合中，则添加操作失败。
-要添加进Set中的元素所在的类，一定要重写equals()和hashCode()方法。 进而保证Set中元素的不可重复性！
-</code></pre><p><strong>（==比较的是两个对象的地址，equals比较的是两个对象的内容）</strong></p>
-<p><strong>Set的实现类：</strong></p>
-<p><strong>HashSet：</strong></p>
-<blockquote>
-<p>① 按 Hash 算法来存储集合中的元素，因此具有很好的存取和查找性能。但不能保证元素的排列顺序，线程不安全</p>
-<p>② 当向 HashSet 集合中存入一个元素时，HashSet 会调用该对象的 hashCode() 方法来得到该对象的 hashCode 值，然后根据 hashCode 值决定该对象在 HashSet 中的存储位置。</p>
-<p>③ HashSet 集合判断两个元素相等的标准：两个对象通过 hashCode() 方法比较相等，并且两个对象的 equals() 方法返回值也相等</p>
-</blockquote>
-<p><strong>LinkedHashSet</strong>：LinkedHashSet 根据元素的 hashCode 值来决定元素的存储位置，同时使用链表维护元素的次序，使元素根据插入的顺序排列</p>
-<p><strong>TreeSet</strong>：TreeSet 是 SortedSet 接口的实现类，TreeSet 可以确保集合元素处于排序状态。</p>
-<p>TreeSet 两种排序方法：自然排序和定制排序。默认情况下，TreeSet 采用自然排序。</p>
-<pre><code>自然排序: 要求被排序的类实现comparable接口，实现其抽象方法。在方法中定制排序规则                        
-定制排序:创建一个实现了Comparator接口的类对象,将此对象作为形参传递给TreeSet的构造器中
-
-        代码：
-                package TestSet;
-                import java.util.Comparator;
-                import java.util.Set;
-                import java.util.TreeSet;
-
-                public class TestTreeSet {
-                    public static void main(String[] args) {
-                        //自然排序
-                        Set&lt;Ball&gt; set1=new TreeSet&lt;&gt;();
-                        Ball b=new Ball(2);
-                        Ball b1=new Ball(1);
-                        Ball b2=new Ball(3);
-
-                        set1.add(b);
-                        set1.add(b1);
-                        set1.add(b2);
-
-                        System.out.println(&quot;-------自然排序---------&quot;);
-
-                        for (Ball ball : set1) {
-                            System.out.println(ball);
-                        }
-
-                        //定制排序 
-                        Comparator&lt;Man&gt; comparator=new Comparator&lt;Man&gt;() {
-
-                            public int compare(Man o1, Man o2) {
-                                    //根据Man的年龄来排序
-                                    //return o1.age-o2.age; 
-                                    //根据Man的姓名来排序
-                                return o1.name.compareTo(o2.name);
-                            }
-                        };
-
-                        Set set2=new TreeSet(comparator);
-
-                        Man man1=new Man(&quot;AA&quot;, 20);
-                        Man man2=new Man(&quot;CC&quot;, 15);
-                        Man man3=new Man(&quot;BB&quot;, 30);
-
-                        set2.add(man1);
-                        set2.add(man2);
-                        set2.add(man3);
-
-                        System.out.println(&quot;-------定制排序---------&quot;);
-
-                        for (Object man : set2) {
-                            System.out.println(man);
-                        }
-                    }
-
-                }
-                //自然排序，类自身实现Comparable接口，重写compareTo方法
-                class Ball implements Comparable&lt;Ball&gt; {
-
-                    int length;
-
-                    public Ball(int length) {
-                        super();
-                        this.length = length;
-                    }
-
-                    public int compareTo(Ball o) {
-                        return this.length - o.length;// 返回值为正数表明大，为0表示相等，为负表示小
-                    }
-
-                    public String toString() {
-                        return &quot;Ball [length=&quot; + length + &quot;]&quot;;
-                    };
-
-                }
-
-                class Man {
-                    String name;
-                    int age;
-
-                    public String toString() {
-                        return &quot;Man [name=&quot; + name + &quot;, age=&quot; + age + &quot;]&quot;;
-                    }
-
-                    public Man(String name, Integer age) {
-                        super();
-                        this.name = name;
-                        this.age = age;
-                    }
-
-                }
-</code></pre><p>运行截图：</p>
-<pre><code>-------自然排序---------
-Ball [length=1]
-Ball [length=2]
-Ball [length=3]
--------定制排序---------
-Man [name=AA, age=20]
-Man [name=BB, age=30]
-Man [name=CC, age=15]
-</code></pre><p><img src="https://raw.githubusercontent.com/kingrocy/markdown-pic/master/image/Map继承树.png" alt=""></p>
-<p><strong>Map</strong>:与Collection并列存在。用于保存具有映射关系的数据:Key-Value</p>
-<p><strong>Map的实现类：</strong></p>
-<p>HashMap:HashMap是 Map 接口使用频率最高的实现类。允许使用null键和null值，与HashSet一样，不保证映射的顺序。</p>
-<p>LinkedHashMap:简单来说，是有顺序的HashMap,和LinkedList类似</p>
-<p>TreeMap:和TreeSet类似,根据Map的key进行排序</p>
-<p>Hashtable：是个古老的 Map 实现类，线程安全。与HashMap不同，Hashtable 不允许使用 null 作为 key 和 value    </p>
-<p>Properties：Properties 类是 Hashtable 的子类，该对象用于处理属性文件</p>
-<pre><code>代码：
-            Properties pros = new Properties();
-            pros.load(new FileInputStream(&quot;jdbc.properties&quot;));
-            String user = pros.getProperty(&quot;user&quot;);
-</code></pre><p>操作集合的工具类：Collections</p>
-<p>操作数组的工具类：Arrays</p>
-<p><strong>常见面试题:</strong></p>
-<p><strong>Collection 和 Collections的区别？</strong></p>
-<p>答：Collection是集合类的上级接口，继承与他的接口主要有Set 和 List.<br>Collections是针对集合类的一个帮助类，提供一系列静态方法实现对各种集合的搜索、排序、线程安全化等操作</p>
-<p><strong>说出ArrayList,Vector, LinkedList的存储性能和特性</strong></p>
-<p>答：ArrayList和Vector都是使用数组方式存储数据，此数组元素数大于实际存储的数据以便增加和<br>插入元素，它们都允许直接按序号索引元素，但是插入元素要涉及数组元素移动等内存操作，所以<br>索引数据快而插入数据慢，Vector由于使用了synchronized方法（线程安全），通常性能上较ArrayList<br>差，而LinkedList使用双向链表实现存储，按序号索引数据需要进行前向或后向遍历，但是插入数据时<br>只需要记录本项的前后项即可，所以插入速度较快。</p>
-<p><strong>HashMap和Hashtable的区别？</strong></p>
-<p>答：HashMap是Hashtable的轻量级实现（非线程安全的实现），他们都完成了Map接口，主要区别在于HashMap<br>            允许空（null）键值（key）,由于非线程安全，效率上可能高于Hashtable。</p>
-<p>HashMap允许将null作为一个entry的key或者value，而Hashtable不允许。</p>
-<p>HashMap把Hashtable的contains方法去掉了，改成containsvalue和containsKey。因为contains方法容易让<br>人引起误解。</p>
-<p>Hashtable继承自Dictionary类，而HashMap是Map接口的一个实现。</p>
-<p>最大的不同是，Hashtable的方法是Synchronize的，而HashMap不是，在多个线程访问Hashtable时，不需要<br>自己为它的方法实现同步，而HashMap 就必须为之提供外同步。 </p>
-<h3 id="四、IO"><a href="#四、IO" class="headerlink" title="四、IO"></a>四、IO</h3><h3 id="五、多线程"><a href="#五、多线程" class="headerlink" title="五、多线程"></a>五、多线程</h3><p>多线程：<br>多线程的两种实现方式：</p>
-<p>①、继承Thread类<br>public class TestThread {<br>    public static void main(String[] args) {<br>        Person p1 = new Person(“AA”);<br>        Person p2 = new Person(“BB”);<br>        Person p3 = new Person(“CC”);</p>
-<pre><code>    p1.start();
-    p2.start();
-    p3.start();
-}
-</code></pre><p>}</p>
-<p>class Person extends Thread {<br>    String name;</p>
-<pre><code>Person(String name) {
-    this.name = name;
-}
-
-public void run() {
-    System.out.println(&quot;这是线程----&quot; + name);
-}
-</code></pre><p>}</p>
-<p>②、实现Runnable接口<br>public class TestThread {<br>    public static void main(String[] args) {</p>
-<pre><code>    Animals a=new Animals();
-
-    Thread t1=new Thread(a);
-    Thread t2=new Thread(a);
-    Thread t3=new Thread(a);
-
-    t1.start();
-    t2.start();
-    t3.start();
-}
-</code></pre><p>}</p>
-<p>class Animals implements Runnable {</p>
-<pre><code>public void run() {
-    System.out.println(&quot;xxxxxxxxxxx&quot;);
-}
-</code></pre><p>}</p>
-<p>每个Java程序都有一个隐含的主线程： main 方法</p>
-<p>线程的几种状态：新建、就绪、运行、阻塞、死亡</p>
-<p>生产者消费者:<a href=""></a></p>
-<p>java中有几种方法可以实现一个线程？用什么关键字修饰同步方法? stop()和suspend()方法为何不推荐使用？</p>
-<p>答：有两种实现方法，分别是继承Thread类与实现Runnable接口<br>用synchronized关键字修饰同步方法<br>反对使用stop()，是因为它不安全。它会解除由线程获取的所有锁定，而且如果对象处于一种不连贯状态，<br>那么其他线程能在那种状态下检查和修改它们。结果很难检查出真正的问题所在。suspend()方法容易发生死锁。<br>调用suspend()的时候，目标线程会停下来，但却仍然持有在这之前获得的锁定。此时，其他任何线程都不能访<br>问锁定的资源，除非被”挂起”的线程恢复运行。对任何线程来说，如果它们想恢复目标线程，同时又试图<br>使用任何一个锁定的资源，就会造成死锁。所以不应该使用suspend()，而应在自己的Thread类中置入一个标志，<br>指出线程应该活动还是挂起。若标志指出线程应该挂起，便用wait()命其进入等待状态。<br>若标志指出线程应当恢复，则用一个notify()重新启动线程。</p>
-<p>sleep() 和 wait() 有什么区别? </p>
-<p>答：sleep是线程类（Thread）的方法，导致此线程暂停执行指定时间，给执行机会给其他线程，但是监控状态<br>依然保持，到时后会自动恢复。调用sleep不会释放对象锁。</p>
-<p>wait是Object类的方法，对此对象调用wait方法导致本线程放弃对象锁，进入等待此对象的等待锁定池，只有针对<br>此对象发出notify方法（或notifyAll）后本线程才进入对象锁定池准备获得对象锁进入运行状态。</p>
-<p>同步和异步有何异同，在什么情况下分别使用他们？举例说明。</p>
-<p>答：如果数据将在线程间共享。例如正在写的数据以后可能被另一个线程读到，或者正在读的数据可能已经被另一个<br>线程写过了，那么这些数据就是共享数据，必须进行同步存取。<br>当应用程序在对象上调用了一个需要花费很长时间来执行的方法，并且不希望让程序等待方法的返回时，就应该使用<br>异步编程，在很多情况下采用异步途径往往更有效率。</p>
-<p>启动一个线程是用run()还是start()?</p>
-<p>答：启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度<br>并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。 </p>
-<p>当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法?</p>
-<p>答：不能，一个对象的一个synchronized方法只能由一个线程访问。</p>
-<p>请说出你所知道的线程同步的方法。</p>
-<p>答：wait():使一个线程处于等待状态，并且释放所持有的对象的lock。<br>sleep():使一个正在运行的线程处于睡眠状态，是一个静态方法，调用此方法要捕捉InterruptedException异常。<br>notify():唤醒一个处于等待状态的线程，注意的是在调用此方法的时候，并不能确切的唤醒某一个等待状态的<br>线程，而是由JVM确定唤醒哪个线程，而且不是按优先级。<br>Allnotity():唤醒所有处入等待状态的线程，注意并不是给所有唤醒线程一个对象的锁，而是让它们竞争。</p>
-<p>多线程有几种实现方法,都是什么?同步有几种实现方法,都是什么? </p>
-<p>答：多线程有两种实现方法，分别是继承Thread类与实现Runnable接口<br>同步的实现方面有两种，分别是synchronized,wait与notify</p>
-<p>线程的基本概念、线程的基本状态以及状态之间的关系</p>
-<p>答：线程指在程序执行过程中，能够执行程序代码的一个执行单位，每个程序至少都有一个线程，也就是程序本身。<br>Java中的线程有四种状态分别是：运行、就绪、挂起、结束</p>
-<p>简述synchronized和java.util.concurrent.locks.Lock的异同 ？</p>
-<p>答：<br>主要相同点：Lock能完成synchronized所实现的所有功能<br>主要不同点：Lock有比synchronized更精确的线程语义和更好的性能。synchronized会自动释放锁，而Lock一定要求<br>程序员手工释放，并且必须在finally从句中释放。 </p>
-<p>一、判断题 </p>
-<pre><code>1.C 和 Java 都是多线程语言。（错误 ） 
-
-2.如果线程死亡，它便不能运行。（ 正确）
-
-3.在 Java 中，高优先级的可运行线程会抢占低优先级线程。（ 正确） 
-
-4.程序开发者必须创建一个线程去管理内存的分配。（ 错误） 
-
-5.一个线程在调用它的 start 方法，之前，该线程将一直处于出生期。（正确 ）
-
-6.当调用一个正在进行线程的 stop()方法时，该线程便会进入休眠状态。（ 错误） //死亡
-
-7.如果线程的 run 方法执行结束或抛出一个不能捕获的例外，线程便进入等待状态。（错误 ）  //线程死亡
-
-8.一个线程可以调用 yield 方法使其他线程有机会运行。（ 正确） 
-</code></pre><p>二、选择题 </p>
-<pre><code>1.Java 语言中提供了一个▁C▁线程，自动回收动态分配的内存。 
-A 异步 
-B 消费者 
-C 守护 
-D 垃圾收集 
-
-2.当▁A▁方法终止时，能使线程进入死亡状态。 
-A run 
-B setPrority 
-C yield 
-D sleep 
-
-3.用▁B▁方法可以改变线程的优先级。 
-A run 
-B setPrority 
-C yield 
-D sleep 
-
-4.线程通过▁C▁方法可以使具有相同优先级线程获得处理器。 
-A run
-B setPrority 
-C yield 
-D sleep 
-
-5.线程通过▁D▁方法可以休眠一段时间，然后恢复运行。 
-A run 
-B setPrority 
-C yield 
-D sleep 
-
-6.▁B▁方法使对象等待队列的第一个线程进入就绪状态。 
-A run 
-B notify 
-C yield 
-D sleep 
-
-7.方法 resume( )负责重新开始▁D▁线程的执行。 
-A 被 stop( )方法停止 
-B 被 sleep( )方法停止 
-C 被 wait( )方法停止 
-D 被 suspend( )方法停止 
-
-8.▁BCD▁方法可以用来暂时停止当前线程的运行。 
-A stop( ) 
-B sleep( ) 
-C wait( ) 
-D suspend() 
-</code></pre><p>Java为什么要引入线程机制，线程、程序、进程之间的关系是怎样的。</p>
-<p>答：线程可以彼此独立的执行，它是一种实现并发机制的有效手段，可以同时使用多个线程来完成不同的任务，<br>并且一般用户在使用多线程时并不考虑底层处理的细节。<br>程序是一段静态的代码，是软件执行的蓝本。进程是程序的一次动态执行过程，即是处于运行过程中的程序。<br>线程是比进程更小的程序执行单位，一个进程可以启动多个线程同时运行，不同线程之间可以共享相同的内<br>存区域和数据。多线程程序是运行时间后嗣可能出现在一个进程之内的、有一个以上线程同时运行的情况的程序。</p>
-<p>Runnable接口包括哪些抽象方法？Thread类有哪些主要域和方法？</p>
-<p>答：Runnable接口中仅有run()抽象方法。<br>Thread类主要域有：MAX_PRIORITY,MIN_PRIORITY,NORM_PRIORITY。<br>主要方法有start(),run(),sleep(),currentThread(),setPriority(),getPriority(),join()等。</p>
-<p>创建线程有哪两种方式？试写出每种的具体的流程。比较两种创建方式的不同，哪个更优。</p>
-<p>1—继承Thread类</p>
-<pre><code>1)  定义类继承Thread类。
-2)  覆盖Thread类中的run方法。
-3)  创建Thread子类对象，即创建了线程对象。
-4)  调用线程对象start方法：启动线程，调用run方法。
-</code></pre><p>2—实现Runnable接口</p>
-<pre><code>1）定义类，实现Runnable接口。
-2）覆盖Runnable接口中的run方法。
-3）通过Thread类建立线程对象。
-4）将Runnable接口的子类对象作为实际参数传递给Thread类的构造方法中。
-5）调用Thread类的start方法：开启线程，调用Runnable子类接口的run方法。
-</code></pre><p>【区别】</p>
-<pre><code>继承Thread: 线程代码存放Thread子类run方法中。
-实现Runnable：线程代码存在接口的子类的run方法。
-</code></pre><p>【实现方法的好处】</p>
-<pre><code>1）避免了单继承的局限性
-2）多个线程可以共享同一个接口子类的对象，非常适合多个相同线程来处理同一份资源。
-</code></pre><h3 id="六、反射"><a href="#六、反射" class="headerlink" title="六、反射"></a>六、反射</h3><h3 id="垃圾回收机制：GC"><a href="#垃圾回收机制：GC" class="headerlink" title="垃圾回收机制：GC"></a>垃圾回收机制：GC</h3><h4 id="垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？"><a href="#垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？" class="headerlink" title="垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？"></a>垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？</h4><p>答：对于GC来说，当程序员创建对象时，GC就开始监控这个对象的地址、大小以及使用情况。通常，GC采用有向图的方式记录和管理堆中的所有对象。通过这种方式确定哪些对象是”可达的”，哪些对象是”不可达”的。即这些对象有没有被引用。当GC确定一些对象是不可达的时候，GC就有责任回收这些内存空间，当然程序员可以手动执行System.gc()，通知GC运行回收垃圾，但是GC不一定会执行。Java语言没有提供释放已分配内存的显示操作方法。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2259,7 +1829,7 @@ D suspend()
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -2267,7 +1837,7 @@ D suspend()
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2276,7 +1846,7 @@ D suspend()
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
