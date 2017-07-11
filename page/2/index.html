@@ -443,6 +443,128 @@ TestAlgorithm.Singleton2@2980e8cb
             
               
                 
+                <a class="post-title-link" href="/2017/02/20/linux根据端口号杀进程/" itemprop="url">
+                  linux根据端口号杀进程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-20T15:41:39+08:00" content="2017-02-20">
+              2017-02-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/20/linux根据端口号杀进程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/20/linux根据端口号杀进程/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+		  
+			
+			&nbsp; | &nbsp;
+			<span id="/2017/02/20/linux根据端口号杀进程/"class="leancloud_visitors" data-flag-title="linux根据端口号杀进程">
+					 &nbsp;阅读次数
+					</span>
+			
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-查找被占用的端口"><a href="#1-查找被占用的端口" class="headerlink" title="1.查找被占用的端口"></a><strong>1.查找被占用的端口</strong></h2><pre><code>netstat -tln  查看端口使用情况
+
+netstat -tln | grep 8060   查看端口8060的使用情况
+</code></pre><h2 id="2-查看端口属于哪个程序？端口被哪个进程占用"><a href="#2-查看端口属于哪个程序？端口被哪个进程占用" class="headerlink" title="2.查看端口属于哪个程序？端口被哪个进程占用?"></a><strong>2.查看端口属于哪个程序？端口被哪个进程占用?</strong></h2><pre><code>lsof -i:8060
+</code></pre><h2 id="3-杀掉占用端口的进程-根据pid杀掉"><a href="#3-杀掉占用端口的进程-根据pid杀掉" class="headerlink" title="3.杀掉占用端口的进程  根据pid杀掉"></a><strong>3.杀掉占用端口的进程  根据pid杀掉</strong></h2><pre><code>kill -9 进程id  
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/02/19/java知识点复习总结-常见面试题（此文常更）/" itemprop="url">
                   java知识点复习总结
                 </a>
@@ -2053,162 +2175,6 @@ $.ajax({
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/18/spring事务/" itemprop="url">
-                  spring事务
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-18T15:00:01+08:00" content="2016-04-18">
-              2016-04-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/spring/" itemprop="url" rel="index">
-                    <span itemprop="name">spring</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/18/spring事务/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/spring事务/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-		  
-			
-			&nbsp; | &nbsp;
-			<span id="/2016/04/18/spring事务/"class="leancloud_visitors" data-flag-title="spring事务">
-					 &nbsp;阅读次数
-					</span>
-			
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>首先先介绍一下事务</p>
-<p>事务就是多个动作被当作为一个独立的工作单元，这些动作要么都完成，要么都不完成</p>
-<p>事务的四大特性(ACID)</p>
-<pre><code>①、原子性：事务中包含的所有操作要么都成功，要么都失败回滚。
-②、一致性：事务必须使数据库从一个一致性状态变换到另一个一致性状态。
-            举例：A和B的账户的钱加起来一共5000，那么无论A和B怎么相互转账，转几次帐，事务结束后两个用户的钱加起来还得是5000；
-③、隔离性：隔离性是指多个并发的事务互相之间不能影响
-④、持久性：事务一旦提交，则对数据库的修改无法逆转。
-</code></pre><p>在对数据库操作的过程中，可能出现以下几种情况：</p>
-<p>1、脏读– 脏读又称无效数据的读出，是指在数据库访问中，事务T1将某一值修改，然后事务T2读取该值，此后T1因为某种原因撤销对该值的修改，这就导致了T2所读取到的数据是无效的。</p>
-<p>2、不可重复读– 不可重复读是指在数据库访问中，一个事务范围内两个相同的查询却返回了不同数据。这是由于查询时系统中其他事务修改的提交而引起的。比如事务T1读取某一数据，事务T2读取并修改了该数据，T1为了对读取值进行检验而再次读取该数据，便得到了不同的结果。</p>
-<p>3、幻读– 幻读是指当事务不是独立执行时发生的一种现象，例如第一个事务对一个表中的数据进行了修改，比如这种修改涉及到表中的”全部数据行”。同时，第二个事务也修改这个表中的数据，这种修改是向表中插入”一行新数据”。那么，以后就会发生操作第一个事务的用户发现表中还有没有修改的数据行，就好象发生了幻觉一样.一般解决幻读的方法是增加范围锁RangeS，锁定检锁范围为只读，这样就避免了幻读。</p>
-<p>事务的传播行为:</p>
-<pre><code>PROPAGATION_REQUIRED -- 支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。
-PROPAGATION_SUPPORTS -- 支持当前事务，如果当前没有事务，就以非事务方式执行。
-PROPAGATION_MANDATORY -- 支持当前事务，如果当前没有事务，就抛出异常。
-PROPAGATION_REQUIRES_NEW -- 新建事务，如果当前存在事务，把当前事务挂起。
-PROPAGATION_NOT_SUPPORTED -- 以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。
-PROPAGATION_NEVER -- 以非事务方式执行，如果当前存在事务，则抛出异常。
-PROPAGATION_NESTED -- 如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与PROPAGATION_REQUIRED类似的操作。
-</code></pre><p>隔离级别:</p>
-<pre><code>ISOLATION_DEFAULT    使用后端数据库默认的隔离级别。
-ISOLATION_READ_UNCOMMITTED    允许读取尚未提交的更改。可能导致脏读、幻影读或不可重复读。
-ISOLATION_READ_COMMITTED    允许从已经提交的并发事务读取。可防止脏读，但幻影读和不可重复读仍可能会发生。
-ISOLATION_REPEATABLE_READ    对相同字段的多次读取的结果是一致的，除非数据被当前事务本身改变。可防止脏读和不可重复读，但幻影读仍可能发生。
-ISOLATION_SERIALIZABLE    完全服从ACID的隔离级别，确保不发生脏读、不可重复读和幻影读。这在所有隔离级别中也是最慢的，因为它通常是通过完全锁定当前事务所涉及的数据表来完成的。
-</code></pre><p>小插曲：<br>2017/3/31<br>问题出现：</p>
-<p>SSH框架下，spring管理事务；一般来说，我事务的切入点都是针对于service这个包;<br>今天写代码的时候，在util里面新建了一个HibernateUtil工具类，当某一Action处理业务较少时，就不需要针对此action新建它的dao、Impl、service了;<br>可以减少一些开发量;<br>但是，在我的一个action调用HibernateUtil工具类时，一直报无法获取session的错误。。。<br>经百度，，发现原来Hibernate4里面若 业务不是在事务控制之下，则无法获取session</p>
-<p>问题解决：<br>        问题找到，现在考虑的就是讲util包里的HibernateUtil工具类也放入到Spring的事务管理下。。这个就很简单了</p>
-<pre><code>&lt;!-- 3. 配置事务切入点, 再把事务属性和事务切入点关联起来 --&gt;
-&lt;aop:config&gt;
-    &lt;aop:pointcut expression=&quot;execution(* service.*.*(..)) || execution(* util.HibernateUtils.*(..)) &quot; id=&quot;txPointcut&quot;/&gt;
-    &lt;aop:advisor advice-ref=&quot;txAdvice&quot; pointcut-ref=&quot;txPointcut&quot;/&gt;
-&lt;/aop:config&gt;
-</code></pre><p>2017-5-10 基于上面的小问题又出现了一个新的小问题</p>
-<p>public class BookLoanAction  extends HibernateUtils<br>新建了一个类并继承了HibernateUtil，然后在这个类中进行数据库操作时，Hibernate一直报无法获取session的错；</p>
-<p>本以为将HibernateUtil工具类也放入到Spring的事务管理下 在BookLoanAction 就可以直接对数据库进行操作了；<br>但是因为BookLoanAction是继承的HibernateUtil，而不是让HibernateUtil作为BookLoanAction的一个属性对数据库进行操作，<br>所以一直无法获取Session</p>
-<pre><code>解决方法：在spring配置文件中增加BookLoanAction也为事务的切入点
-&lt;aop:pointcut expression=&quot;execution(* service.*.*(..)) || execution(* util.HibernateUtils.*(..)) || execution(* action.BookLoanAction.*(..)) &quot; id=&quot;txPointcut&quot;/&gt;
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2254,7 +2220,7 @@ ISOLATION_SERIALIZABLE    完全服从ACID的隔离级别，确保不发生脏�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -2262,7 +2228,7 @@ ISOLATION_SERIALIZABLE    完全服从ACID的隔离级别，确保不发生脏�
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2271,7 +2237,7 @@ ISOLATION_SERIALIZABLE    完全服从ACID的隔离级别，确保不发生脏�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

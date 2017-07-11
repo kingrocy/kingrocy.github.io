@@ -543,6 +543,148 @@
             
               
                 
+                <a class="post-title-link" href="/2017/06/13/springmvc Date转json问题/" itemprop="url">
+                  springmvc中json转化问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-06-13T11:00:01+08:00" content="2017-06-13">
+              2017-06-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/springmvc/" itemprop="url" rel="index">
+                    <span itemprop="name">springmvc</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/13/springmvc Date转json问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/13/springmvc Date转json问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+		  
+			
+			&nbsp; | &nbsp;
+			<span id="/2017/06/13/springmvc Date转json问题/"class="leancloud_visitors" data-flag-title="springmvc中json转化问题">
+					 &nbsp;阅读次数
+					</span>
+			
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天做项目时，碰到一个问题；<br>通过mybatis在数据库中查询到的Date类型对象，在前台页面一直显示一串数字，也就是这个日期对象的时间戳。</p>
+<p>后来发现原来是 springmvc整合jackson之后，将从数据库中获取到的Date类型的对象传给前台时，jackson会将date类型的对象转换成long，所以在前台看到的是一串数字。</p>
+<p>   解决办法：<br>            在springmvc中自定义json序列化格式</p>
+<pre><code>首先，新建一个类 继承JsonSerializer这个抽象类，重写其序列化方法
+
+
+public class CustomDateSerializer extends JsonSerializer {
+
+
+    public void serialize(Object arg0, JsonGenerator arg1, SerializerProvider arg2)
+            throws IOException, JsonProcessingException {
+
+            Date value=(Date)arg0;
+            SimpleDateFormat formatter = new SimpleDateFormat(&quot;yyyy-MM-dd hh:mm:ss&quot;);  
+            String formattedDate = formatter.format(value);  
+            arg1.writeString(formattedDate); 
+    }
+
+
+}
+
+在需要进行序列化字段前加上注解  如：
+
+    @JsonSerialize(using = CustomDateSerializer.class) 
+    private Date createTime;
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/17/数据库索引/" itemprop="url">
                   数据库索引解析
                 </a>
@@ -1662,128 +1804,6 @@ public class AbstratorFactory {
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/20/linux根据端口号杀进程/" itemprop="url">
-                  linux根据端口号杀进程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-20T15:41:39+08:00" content="2017-02-20">
-              2017-02-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/02/20/linux根据端口号杀进程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/20/linux根据端口号杀进程/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-		  
-			
-			&nbsp; | &nbsp;
-			<span id="/2017/02/20/linux根据端口号杀进程/"class="leancloud_visitors" data-flag-title="linux根据端口号杀进程">
-					 &nbsp;阅读次数
-					</span>
-			
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-查找被占用的端口"><a href="#1-查找被占用的端口" class="headerlink" title="1.查找被占用的端口"></a><strong>1.查找被占用的端口</strong></h2><pre><code>netstat -tln  查看端口使用情况
-
-netstat -tln | grep 8060   查看端口8060的使用情况
-</code></pre><h2 id="2-查看端口属于哪个程序？端口被哪个进程占用"><a href="#2-查看端口属于哪个程序？端口被哪个进程占用" class="headerlink" title="2.查看端口属于哪个程序？端口被哪个进程占用?"></a><strong>2.查看端口属于哪个程序？端口被哪个进程占用?</strong></h2><pre><code>lsof -i:8060
-</code></pre><h2 id="3-杀掉占用端口的进程-根据pid杀掉"><a href="#3-杀掉占用端口的进程-根据pid杀掉" class="headerlink" title="3.杀掉占用端口的进程  根据pid杀掉"></a><strong>3.杀掉占用端口的进程  根据pid杀掉</strong></h2><pre><code>kill -9 进程id  
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1829,7 +1849,7 @@ netstat -tln | grep 8060   查看端口8060的使用情况
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1837,7 +1857,7 @@ netstat -tln | grep 8060   查看端口8060的使用情况
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1846,7 +1866,7 @@ netstat -tln | grep 8060   查看端口8060的使用情况
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
