@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="jsp," />
 
 
 
@@ -57,37 +57,34 @@
 
 
 
-<meta name="description" content="linux上开发环境搭建较为麻烦，现对于常用的一些环境进行搭建与记录，方便日后进行查看。
-在这之前，先介绍一下vim的使用
-1、首先vim打开一个文件，当需要对文件进行修改时，按I键，即可进入“插入状态”  然后就可对文件进行操作
+<meta name="description" content="开发项目时，经常因为一些资源或请求的绝对路径或相对路径搞混，导致项目报错。
+通过使用标签 可以帮助我们解决这个问题
+先给出代码
+&amp;lt;%
+    String path = request.getContextPath();
 
-
-2、当对文件改动完成之后，有以下几个操作：
-
-     1、保存退出  先按ESC 再按： 再按 w(write) q(quit) 或者先按 ESC 再按： 再按">
+    String basePath = request.getScheme()+&amp;quot;://&amp;quot; +request.getServerName()+&amp;q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux搭建web环境">
-<meta property="og:url" content="http://yoursite.com/2017/06/17/linux下搭建web环境/index.html">
+<meta property="og:title" content="了解<base href= "<%=basePath %>">的作用">
+<meta property="og:url" content="http://yoursite.com/2017/07/15/详解base标签的作用/index.html">
 <meta property="og:site_name" content="生命不止，前行不止">
-<meta property="og:description" content="linux上开发环境搭建较为麻烦，现对于常用的一些环境进行搭建与记录，方便日后进行查看。
-在这之前，先介绍一下vim的使用
-1、首先vim打开一个文件，当需要对文件进行修改时，按I键，即可进入“插入状态”  然后就可对文件进行操作
+<meta property="og:description" content="开发项目时，经常因为一些资源或请求的绝对路径或相对路径搞混，导致项目报错。
+通过使用标签 可以帮助我们解决这个问题
+先给出代码
+&amp;lt;%
+    String path = request.getContextPath();
 
-
-2、当对文件改动完成之后，有以下几个操作：
-
-     1、保存退出  先按ESC 再按： 再按 w(write) q(quit) 或者先按 ESC 再按： 再按">
-<meta property="og:updated_time" content="2017-07-10T14:56:45.949Z">
+    String basePath = request.getScheme()+&amp;quot;://&amp;quot; +request.getServerName()+&amp;q">
+<meta property="og:updated_time" content="2017-07-15T15:15:50.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux搭建web环境">
-<meta name="twitter:description" content="linux上开发环境搭建较为麻烦，现对于常用的一些环境进行搭建与记录，方便日后进行查看。
-在这之前，先介绍一下vim的使用
-1、首先vim打开一个文件，当需要对文件进行修改时，按I键，即可进入“插入状态”  然后就可对文件进行操作
+<meta name="twitter:title" content="了解<base href= "<%=basePath %>">的作用">
+<meta name="twitter:description" content="开发项目时，经常因为一些资源或请求的绝对路径或相对路径搞混，导致项目报错。
+通过使用标签 可以帮助我们解决这个问题
+先给出代码
+&amp;lt;%
+    String path = request.getContextPath();
 
-
-2、当对文件改动完成之后，有以下几个操作：
-
-     1、保存退出  先按ESC 再按： 再按 w(write) q(quit) 或者先按 ESC 再按： 再按">
+    String basePath = request.getScheme()+&amp;quot;://&amp;quot; +request.getServerName()+&amp;q">
 
 
 
@@ -105,7 +102,7 @@
   };
 </script>
 
-  <title> linux搭建web环境 | 生命不止，前行不止 </title>
+  <title> 了解<base href= "<%=basePath %>">的作用 | 生命不止，前行不止 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +255,7 @@
             
             
               
-                linux搭建web环境
+                了解<base href= "<%=basePath %>">的作用
               
             
           </h1>
@@ -270,8 +267,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-06-17T11:00:01+08:00" content="2017-06-17">
-              2017-06-17
+            <time itemprop="dateCreated" datetime="2017-07-15T09:00:01+08:00" content="2017-07-15">
+              2017-07-15
             </time>
           </span>
 
@@ -284,8 +281,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
                   </a>
                 </span>
 
@@ -300,8 +297,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/06/17/linux下搭建web环境/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/17/linux下搭建web环境/" itemprop="commentsCount"></span>
+                <a href="/2017/07/15/详解base标签的作用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/15/详解base标签的作用/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -311,7 +308,7 @@
 		  
 			
 			&nbsp; | &nbsp;
-			<span id="/2017/06/17/linux下搭建web环境/"class="leancloud_visitors" data-flag-title="linux搭建web环境">
+			<span id="/2017/07/15/详解base标签的作用/"class="leancloud_visitors" data-flag-title="了解<base href= "<%=basePath %>">的作用">
 					 &nbsp;阅读次数
 					</span>
 			
@@ -326,68 +323,37 @@
       
 
       
-        <p>linux上开发环境搭建较为麻烦，现对于常用的一些环境进行搭建与记录，方便日后进行查看。</p>
-<p>在这之前，先介绍一下vim的使用</p>
-<pre><code>1、首先vim打开一个文件，当需要对文件进行修改时，按I键，即可进入“插入状态”  然后就可对文件进行操作
+        <p>开发项目时，经常因为一些资源或请求的绝对路径或相对路径搞混，导致项目报错。</p>
+<p>通过使用<base href="">标签 可以帮助我们解决这个问题</p>
+<p>先给出代码</p>
+<pre><code>&lt;%
+    String path = request.getContextPath();
+
+    String basePath = request.getScheme()+&quot;://&quot; +request.getServerName()+&quot;:&quot; +request.getServerPort()+path+&quot;/&quot;;
+
+    //这样一来，你的网页基准url就成了basepath-----http://localhost:8080/jlyc/
+
+    //一些静态资源的请求或者是其他请求 就可以根据这个basePath来了
+
+%&gt;
+</code></pre><p>一般来说，这段代码放在一个公用的jsp中来供其他页面引用</p>
+<p>在引用了该公用jsp文件的页面中，我们可以这样来写一些路径</p>
+<pre><code>1、静态资源的引用 如：js、css文件
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;commons/static/h-ui/css/H-ui.min.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;commons/static/h-ui.admin/css/H-ui.admin.css&quot; /&gt;
+
+这样写，实际路径就会是http://localhost:8080/jlyc/commons/static/h-ui/css/H-ui.min.css
+
+记住，在使用base标签指定url的情况下，我们资源的请求路径不可加&quot;/&quot;
 
 
-2、当对文件改动完成之后，有以下几个操作：
+2、浏览器请求
 
-     1、保存退出  先按ESC 再按： 再按 w(write) q(quit) 或者先按 ESC 再按： 再按 x  
+&lt;a href=&quot;news&quot;&gt;to news page&lt;/a&gt;
 
-                    （ x 相当于 w q ）
-
-     2、不保存退出  先按ESC 再按： 再按 q！
-
-     3、正常退出（当文件没有被修改时才可使用） 先按ESC 再按： 再按 q
-</code></pre><p><strong>1、jdk的安装配置</strong></p>
-<p><strong>2、tomcat的安装配置</strong></p>
-<pre><code>1、从网上下载tomcat linux的安装包 如：apache-tomcat-7.0.79.tar.gz
-2、通过Xftp 将此安装包复制到linux下的指定位置上
-3、 cd /usr/local/server/
-    tar -zxvf  /usr/local/server/apache-tomcat-7.0.79.tar.gz
-4、进入tomcat的bin目录下，启动tomcat  ./startup.sh
-5、进入tomcat的网址看看tomcat是否已经成功启动
-
-注意事项：tomcat启动后，却访问不了主页。是因为linux的防火墙没有关，将防火墙关闭就可以了。
-关闭防火墙命令：/sbin/service iptables stop
-(关闭防火墙需要root用户来关闭，，普通用户关闭不了。。。而且关闭防火墙重启失效，。。。。)
-
-
-备注：linux防火墙有两种方式开关闭。
-
-     第一种：重启后生效
-            开启： chkconfig iptables on
-            关闭： chkconfig iptables off 
-
-      第二种：即时生效，重启后失效
-            开启： service iptables start
-            关闭： service iptables stop
-</code></pre><p><strong>3、mysql的安装配置</strong></p>
-<p><strong>4、redis的安装配置</strong></p>
-<pre><code>1、下载redis  并解压  tar -zxvf redis-3.2.9.tar.gz  我是将redis解压到/usr/local/server/redis-3.2.9
-
-2、在redis解压目录下 分别执行 make 、 make install命令
-
-3、在前两个步骤下，redis已经安装成功了； 
-
-  在这里说两个东西  /usr/local/bin 这个目录下存放了linux安装的一些程序的启动文件 redis的启动需要进入此目录下
-
-  在启动redis的时候 我们需要指定redis.conf
-
-  一般我们需要拷贝一份redis.conf 然后改动这个redis.conf文件 通过此文件来启动redis
-
-4、启动redis
-
-   进入/usr/local/bin 执行 redis-server /myredis/redis.conf来启动redis
-
-5、启动好redis之后，想进入redis
-
-   执行 redis-cli -p 6379 
-
-6、退出redis  执行 shutdown  然后exit
-</code></pre><p><strong>5、nginx的安装配置</strong></p>
-
+在使用base标签时，该请求是 http://localhost:8080/jlyc/news
+</code></pre>
       
     </div>
 
@@ -401,7 +367,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag">#linux</a>
+            <a href="/tags/jsp/" rel="tag">#jsp</a>
           
         </div>
       
@@ -410,17 +376,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/13/springmvc Date转json问题/" rel="next" title="springmvc中json转化问题">
-                <i class="fa fa-chevron-left"></i> springmvc中json转化问题
+              <a href="/2017/07/02/mysql开启远程连接服务/" rel="next" title="mysql开启远程连接服务">
+                <i class="fa fa-chevron-left"></i> mysql开启远程连接服务
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/02/mysql开启远程连接服务/" rel="prev" title="mysql开启远程连接服务">
-                mysql开启远程连接服务 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -446,8 +408,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/06/17/linux下搭建web环境/"
-           data-title="linux搭建web环境" data-url="http://yoursite.com/2017/06/17/linux下搭建web环境/">
+      <div class="ds-thread" data-thread-key="2017/07/15/详解base标签的作用/"
+           data-title="了解<base href= "<%=basePath %>">的作用" data-url="http://yoursite.com/2017/07/15/详解base标签的作用/">
       </div>
     
   </div>

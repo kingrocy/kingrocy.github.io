@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title><![CDATA[了解<base href= "<%=basePath %>">的作用]]></title>
+      <url>http://yoursite.com/2017/07/15/%E8%AF%A6%E8%A7%A3base%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BD%9C%E7%94%A8/</url>
+      <content type="html"><![CDATA[<p>开发项目时，经常因为一些资源或请求的绝对路径或相对路径搞混，导致项目报错。</p>
+<p>通过使用<base href="">标签 可以帮助我们解决这个问题</p>
+<p>先给出代码</p>
+<pre><code>&lt;%
+    String path = request.getContextPath();
+
+    String basePath = request.getScheme()+&quot;://&quot; +request.getServerName()+&quot;:&quot; +request.getServerPort()+path+&quot;/&quot;;
+
+    //这样一来，你的网页基准url就成了basepath-----http://localhost:8080/jlyc/
+
+    //一些静态资源的请求或者是其他请求 就可以根据这个basePath来了
+
+%&gt;
+</code></pre><p>一般来说，这段代码放在一个公用的jsp中来供其他页面引用</p>
+<p>在引用了该公用jsp文件的页面中，我们可以这样来写一些路径</p>
+<pre><code>1、静态资源的引用 如：js、css文件
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;commons/static/h-ui/css/H-ui.min.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;commons/static/h-ui.admin/css/H-ui.admin.css&quot; /&gt;
+
+这样写，实际路径就会是http://localhost:8080/jlyc/commons/static/h-ui/css/H-ui.min.css
+
+记住，在使用base标签指定url的情况下，我们资源的请求路径不可加&quot;/&quot;
+
+
+2、浏览器请求
+
+&lt;a href=&quot;news&quot;&gt;to news page&lt;/a&gt;
+
+在使用base标签时，该请求是 http://localhost:8080/jlyc/news
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> java </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> jsp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[mysql开启远程连接服务]]></title>
       <url>http://yoursite.com/2017/07/02/mysql%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1/</url>
       <content type="html"><![CDATA[<p>这几天在linux上部署我的项目，项目数据库配置的是我windows下面的数据库。但是项目跑起来却无法连接上数据库。后来发现原来是mysql没有开启远程连接服务，不能根据本地ip来连接。先给出解决方法：</p>
@@ -339,35 +389,9 @@ public class CustomDateSerializer extends JsonSerializer {
         
         <tags>
             
-            <tag> git </tag>
-            
             <tag> idea </tag>
             
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[一些生冷的sql语句]]></title>
-      <url>http://yoursite.com/2017/03/13/sql/</url>
-      <content type="html"><![CDATA[<p>1、给已经建好的表对某一字段添加唯一约束</p>
-<pre><code>ALTER TABLE book add unique(book_isbn)
-</code></pre><p>2、给表的字段设置默认值</p>
-<pre><code>ALTER TABLE book_type ALTER COLUMN parent_id SET DEFAULT 0;
-</code></pre><p>3、增加字段</p>
-<pre><code>alter table gov_senddocumentNum add categoryId varchar(20)
-</code></pre>]]></content>
-      
-        <categories>
-            
-            <category> sql </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> sql </tag>
+            <tag> git </tag>
             
         </tags>
         
@@ -396,6 +420,32 @@ public class CustomDateSerializer extends JsonSerializer {
         <tags>
             
             <tag> idea </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[一些生冷的sql语句]]></title>
+      <url>http://yoursite.com/2017/03/13/sql/</url>
+      <content type="html"><![CDATA[<p>1、给已经建好的表对某一字段添加唯一约束</p>
+<pre><code>ALTER TABLE book add unique(book_isbn)
+</code></pre><p>2、给表的字段设置默认值</p>
+<pre><code>ALTER TABLE book_type ALTER COLUMN parent_id SET DEFAULT 0;
+</code></pre><p>3、增加字段</p>
+<pre><code>alter table gov_senddocumentNum add categoryId varchar(20)
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> sql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> sql </tag>
             
         </tags>
         
@@ -622,6 +672,31 @@ public class AbstratorFactory {
     </entry>
     
     <entry>
+      <title><![CDATA[linux根据端口号杀进程]]></title>
+      <url>http://yoursite.com/2017/02/20/linux%E6%A0%B9%E6%8D%AE%E7%AB%AF%E5%8F%A3%E5%8F%B7%E6%9D%80%E8%BF%9B%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h2 id="1-查找被占用的端口"><a href="#1-查找被占用的端口" class="headerlink" title="1.查找被占用的端口"></a><strong>1.查找被占用的端口</strong></h2><pre><code>netstat -tln  查看端口使用情况
+
+netstat -tln | grep 8060   查看端口8060的使用情况
+</code></pre><h2 id="2-查看端口属于哪个程序？端口被哪个进程占用"><a href="#2-查看端口属于哪个程序？端口被哪个进程占用" class="headerlink" title="2.查看端口属于哪个程序？端口被哪个进程占用?"></a><strong>2.查看端口属于哪个程序？端口被哪个进程占用?</strong></h2><pre><code>lsof -i:8060
+</code></pre><h2 id="3-杀掉占用端口的进程-根据pid杀掉"><a href="#3-杀掉占用端口的进程-根据pid杀掉" class="headerlink" title="3.杀掉占用端口的进程  根据pid杀掉"></a><strong>3.杀掉占用端口的进程  根据pid杀掉</strong></h2><pre><code>kill -9 进程id  
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> Linux </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[单例设计模式]]></title>
       <url>http://yoursite.com/2017/02/20/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
       <content type="html"><![CDATA[<h3 id="单线程下的单例模式：多线程下不安全"><a href="#单线程下的单例模式：多线程下不安全" class="headerlink" title="单线程下的单例模式：多线程下不安全"></a>单线程下的单例模式：多线程下不安全</h3><pre><code>class Singleton{
@@ -725,31 +800,6 @@ TestAlgorithm.Singleton2@2980e8cb
             <tag> 单例设计模式 </tag>
             
             <tag> 线程 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[linux根据端口号杀进程]]></title>
-      <url>http://yoursite.com/2017/02/20/linux%E6%A0%B9%E6%8D%AE%E7%AB%AF%E5%8F%A3%E5%8F%B7%E6%9D%80%E8%BF%9B%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<h2 id="1-查找被占用的端口"><a href="#1-查找被占用的端口" class="headerlink" title="1.查找被占用的端口"></a><strong>1.查找被占用的端口</strong></h2><pre><code>netstat -tln  查看端口使用情况
-
-netstat -tln | grep 8060   查看端口8060的使用情况
-</code></pre><h2 id="2-查看端口属于哪个程序？端口被哪个进程占用"><a href="#2-查看端口属于哪个程序？端口被哪个进程占用" class="headerlink" title="2.查看端口属于哪个程序？端口被哪个进程占用?"></a><strong>2.查看端口属于哪个程序？端口被哪个进程占用?</strong></h2><pre><code>lsof -i:8060
-</code></pre><h2 id="3-杀掉占用端口的进程-根据pid杀掉"><a href="#3-杀掉占用端口的进程-根据pid杀掉" class="headerlink" title="3.杀掉占用端口的进程  根据pid杀掉"></a><strong>3.杀掉占用端口的进程  根据pid杀掉</strong></h2><pre><code>kill -9 进程id  
-</code></pre>]]></content>
-      
-        <categories>
-            
-            <category> Linux </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Linux </tag>
             
         </tags>
         

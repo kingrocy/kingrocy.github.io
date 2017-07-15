@@ -239,6 +239,153 @@
             
               
                 
+                <a class="post-title-link" href="/2017/07/15/详解base标签的作用/" itemprop="url">
+                  了解<base href= "<%=basePath %>">的作用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-07-15T09:00:01+08:00" content="2017-07-15">
+              2017-07-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/07/15/详解base标签的作用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/15/详解base标签的作用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+		  
+			
+			&nbsp; | &nbsp;
+			<span id="/2017/07/15/详解base标签的作用/"class="leancloud_visitors" data-flag-title="了解<base href= "<%=basePath %>">的作用">
+					 &nbsp;阅读次数
+					</span>
+			
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>开发项目时，经常因为一些资源或请求的绝对路径或相对路径搞混，导致项目报错。</p>
+<p>通过使用<base href="">标签 可以帮助我们解决这个问题</p>
+<p>先给出代码</p>
+<pre><code>&lt;%
+    String path = request.getContextPath();
+
+    String basePath = request.getScheme()+&quot;://&quot; +request.getServerName()+&quot;:&quot; +request.getServerPort()+path+&quot;/&quot;;
+
+    //这样一来，你的网页基准url就成了basepath-----http://localhost:8080/jlyc/
+
+    //一些静态资源的请求或者是其他请求 就可以根据这个basePath来了
+
+%&gt;
+</code></pre><p>一般来说，这段代码放在一个公用的jsp中来供其他页面引用</p>
+<p>在引用了该公用jsp文件的页面中，我们可以这样来写一些路径</p>
+<pre><code>1、静态资源的引用 如：js、css文件
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;commons/static/h-ui/css/H-ui.min.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;commons/static/h-ui.admin/css/H-ui.admin.css&quot; /&gt;
+
+这样写，实际路径就会是http://localhost:8080/jlyc/commons/static/h-ui/css/H-ui.min.css
+
+记住，在使用base标签指定url的情况下，我们资源的请求路径不可加&quot;/&quot;
+
+
+2、浏览器请求
+
+&lt;a href=&quot;news&quot;&gt;to news page&lt;/a&gt;
+
+在使用base标签时，该请求是 http://localhost:8080/jlyc/news
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/07/02/mysql开启远程连接服务/" itemprop="url">
                   mysql开启远程连接服务
                 </a>
@@ -1163,129 +1310,6 @@ public class CustomDateSerializer extends JsonSerializer {
             
               
                 
-                <a class="post-title-link" href="/2017/03/13/sql/" itemprop="url">
-                  一些生冷的sql语句
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-13T09:00:01+08:00" content="2017-03-13">
-              2017-03-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/sql/" itemprop="url" rel="index">
-                    <span itemprop="name">sql</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/03/13/sql/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/sql/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-		  
-			
-			&nbsp; | &nbsp;
-			<span id="/2017/03/13/sql/"class="leancloud_visitors" data-flag-title="一些生冷的sql语句">
-					 &nbsp;阅读次数
-					</span>
-			
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、给已经建好的表对某一字段添加唯一约束</p>
-<pre><code>ALTER TABLE book add unique(book_isbn)
-</code></pre><p>2、给表的字段设置默认值</p>
-<pre><code>ALTER TABLE book_type ALTER COLUMN parent_id SET DEFAULT 0;
-</code></pre><p>3、增加字段</p>
-<pre><code>alter table gov_senddocumentNum add categoryId varchar(20)
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2017/03/13/idea/" itemprop="url">
                   使用IDEA搭建web项目开发环境
                 </a>
@@ -1367,6 +1391,129 @@ public class CustomDateSerializer extends JsonSerializer {
 <p>还有，我的tomcat在eclispe里运行没问题，但在idea中就报java.lang.UnsatisfiedLinkError: D:\work\apache-tomcat-7.0.47\bin\tcnative-1.dll: Can’t load IA 32-bit .dll on a AMD 64-bit platform，，我也是醉了，网上百度了下，感觉他们的回答不靠谱，也就没管了，反正这个错误貌似不影响开发。。。</p>
 <p>等这周上班时，准备把毕业设计迁移到idea里去。慢慢熟悉idea了。。。。。。。</p>
 
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/13/sql/" itemprop="url">
+                  一些生冷的sql语句
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-13T09:00:01+08:00" content="2017-03-13">
+              2017-03-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/13/sql/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/sql/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+		  
+			
+			&nbsp; | &nbsp;
+			<span id="/2017/03/13/sql/"class="leancloud_visitors" data-flag-title="一些生冷的sql语句">
+					 &nbsp;阅读次数
+					</span>
+			
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、给已经建好的表对某一字段添加唯一约束</p>
+<pre><code>ALTER TABLE book add unique(book_isbn)
+</code></pre><p>2、给表的字段设置默认值</p>
+<pre><code>ALTER TABLE book_type ALTER COLUMN parent_id SET DEFAULT 0;
+</code></pre><p>3、增加字段</p>
+<pre><code>alter table gov_senddocumentNum add categoryId varchar(20)
+</code></pre>
           
         
       
@@ -1531,279 +1678,6 @@ public class CustomDateSerializer extends JsonSerializer {
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/24/工厂设计模式/" itemprop="url">
-                  工厂设计模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-24T16:15:40+08:00" content="2017-02-24">
-              2017-02-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/02/24/工厂设计模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/24/工厂设计模式/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-		  
-			
-			&nbsp; | &nbsp;
-			<span id="/2017/02/24/工厂设计模式/"class="leancloud_visitors" data-flag-title="工厂设计模式">
-					 &nbsp;阅读次数
-					</span>
-			
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>工厂模式可以动态的决定实例化哪一个类</p>
-<p>工厂模式可以简单分为三种：</p>
-<pre><code>1、简单工厂
-2、工厂方法
-3、抽象工厂
-</code></pre><p>废话不多说 直接先来个<strong>简单工厂</strong>（工厂根据条件来决定生产哪一种产品）</p>
-<pre><code> //简单工厂设计模式
-public class SimpleFactoryPattern {
-
-    //测试简单工厂设计模式 看工厂能否取出我所需要的产品
-    public static void main(String[] args) {
-
-        Phone phone=Factory.getProduct(&quot;Mi&quot;);
-
-        phone.show();
-    }
-}
-
-
-//定义一个工厂  根据产品名称来获取对应产品
-class Factory{
-
-    public static Phone getProduct(String productName){    
-        if(&quot;Mi&quot;.equals(productName)){
-            return new Mi();
-        }else if(&quot;Meizu&quot;.equals(productName)){
-            return new Meizu();
-        }else {
-            return null;
-        }
-    }
-}
-
-
-interface Phone{
-    void show();
-}
-
-class Mi implements Phone{
-
-    public void show() {
-        System.out.println(&quot;小米手机，为发烧而生!&quot;);
-    }
-}
-
-class Meizu implements Phone{
-
-    public void show() {
-        System.out.println(&quot;MX 为梦想而生!&quot;);
-    }
-
-
-}
-</code></pre><p>简单工厂就是将生产产品的代码放到一个类中，根据某种条件来指定生产的产品。</p>
-<p>这样的实现方式有两大问题:</p>
-<pre><code>1、如果工厂要添加新的产品，必须改这个类的代码
-2、若工厂的产品种类繁多，那么这个类的处理逻辑将会十分复杂，不便于维护
-</code></pre><p><strong>工厂方法</strong></p>
-<pre><code>//工厂模式之二：工厂方法
-public class FactoryMethod {
-
-    //测试
-    public static void main(String[] args) {
-        CPUFactory intelCPU=new IntelCPUFactory();
-        intelCPU.getCPU().show();
-
-        CPUFactory amdCPU=new AmdCPUFactory();
-        amdCPU.getCPU().show();
-    }
-
-}
-
-//工厂中某一种类的产品接口
-interface CPU{
-    void show();
-}
-
-class IntelCPU implements CPU{
-
-    public void show() {
-        System.out.println(&quot;我是Intel的CPU&quot;);
-    }
-
-}
-
-class AmdCPU implements CPU{
-
-    public void show() {
-        System.out.println(&quot;我是AMD的CPU&quot;);
-    }
-
-}
-
-//工厂接口
-interface CPUFactory{
-    CPU getCPU();
-}
-
-//IntelCPU 工厂
-class IntelCPUFactory implements CPUFactory{
-
-    public CPU getCPU() {
-        return new IntelCPU();
-    }
-
-}
-
-//AMDCPU 工厂
-class AmdCPUFactory implements CPUFactory{
-
-    public CPU getCPU() {
-        return new AmdCPU();
-    }
-
-}
-</code></pre><p>工厂方法把不同的产品放在实现了工厂接口的不同工厂类里面，这样就算其中一个工厂类出了问题，其他工厂类也能正常工作，互相不受影响，以后增加新产品，也只需要新增一个实现工厂接口工厂类，就能达到，不用修改已有的代码。</p>
-<p><strong>抽象工厂</strong></p>
-<pre><code>interface IProduct1 {  
-    public void show();  
-}  
-interface IProduct2 {  
-    public void show();  
-}  
-
-class Product1 implements IProduct1 {  
-    public void show() {  
-        System.out.println(&quot;这是1型产品&quot;);  
-    }  
-}  
-class Product2 implements IProduct2 {  
-    public void show() {  
-        System.out.println(&quot;这是2型产品&quot;);  
-    }  
-}  
-
-interface IFactory {  
-    public IProduct1 createProduct1();  
-    public IProduct2 createProduct2();  
-}  
-class Factory implements IFactory{  
-    public IProduct1 createProduct1() {  
-        return new Product1();  
-    }  
-    public IProduct2 createProduct2() {  
-        return new Product2();  
-    }  
-}  
-
-public class AbstratorFactory {  
-    public static void main(String[] args){  
-        IFactory factory = new Factory();  
-        factory.createProduct1().show();  
-        factory.createProduct2().show();  
-    }  
-} 
-</code></pre><p>对工厂产品进行分类管理</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1849,7 +1723,7 @@ public class AbstratorFactory {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1866,7 +1740,7 @@ public class AbstratorFactory {
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

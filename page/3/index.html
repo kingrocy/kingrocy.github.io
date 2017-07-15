@@ -239,6 +239,264 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/13/jquery和js/" itemprop="url">
+                  jquery、js小知识
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-13T12:00:01+08:00" content="2016-11-13">
+              2016-11-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/13/jquery和js/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/13/jquery和js/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+		  
+			
+			&nbsp; | &nbsp;
+			<span id="/2016/11/13/jquery和js/"class="leancloud_visitors" data-flag-title="jquery、js小知识">
+					 &nbsp;阅读次数
+					</span>
+			
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>jquery选择器</p>
+<p>Jquery 选择器获取元素 时，对特殊字符转义需要加两个反斜杠</p>
+<pre><code>如：var orgName=$(&quot;#whir\\$t3198_f4972&quot;).val();    
+</code></pre><p>小问题：</p>
+<pre><code>&lt;div style=&quot;WIDTH: 100%&quot; id=&quot;whir$t3198-whir$t3198_f4972&quot;&gt;
+    &lt;div class=&quot;cls-ui cls-ui207 cls-ui-readonly cls-ui-1003131 cls-print cls-print207 cls-print-1003131&quot;&gt;信息公司通信运维部&lt;/div&gt;
+&lt;/div&gt;
+
+用js怎么更改 &apos;信息公司通信运维部&apos;    这些字？
+
+$(&quot;#whir\\$t3198-whir\\$t3198_f4972&quot;).children().eq(0).text(&quot;市场开发部&quot;);
+ 这是错误的，，这样获取不到jquery对象
+
+$(&quot;div[id=&apos;whir$t3198-whir$t3198_f4972&apos;]&quot;).children().eq(0).text(&quot;施工部&quot;); 
+这样是对的
+</code></pre><p>jquery ajax 在ie下问题:</p>
+<pre><code>url后面不可携带参数，若携带参数，就会发生错误
+正确做法
+$.ajax({
+        url:&apos;EzFLOWDealSearch!getId.action&apos;,
+        data: {xmname:name},
+        dataType: &apos;json&apos;,
+        async:false, 
+        success:function(data){    
+            $(&quot;#xm_id&quot;).val(data.xm_id);
+        },
+        error:function(a,b,c){
+            alert(a);
+            alert(b);
+            alert(c);
+        }
+
+    });
+</code></pre><p><strong>小细节：</strong></p>
+<pre><code>1、jqeury在对超链接进行操作时，需在代码的最后return false取消超链接的默认行为，不然前面写的代码不一定执行完页面就跳转了。
+
+
+2、jquery中replaceAll无效  只有replace方法 才可替换指定的字符串
+
+
+
+3、jquery中的attr和prop的区别
+   attr和prop都是jquery中获取对象属性的方法
+
+   区别：
+       对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。
+     对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。        
+</code></pre><p><strong>js常用小知识</strong></p>
+<pre><code>1、js中判断字符串是否相等和indexOf()方法
+
+    在js或jquery中，判断字符串是否相等没有equals()方法。。直接 ==即可;
+    js中的==不是和java里面的==一样比较对象的内存地址;
+    js中的==会根据类型和值来判断;若类型和值都相等，则相等;若类型不同，在js尝试类型转换，再比较;
+
+
+    indexOf方法可返回某个指定的字符串值在字符串中首次出现的位置。
+    若返回值&lt;0 则代表字符串中没有这个指定的字符串
+
+2、js比较数字大小
+        parseInt(num1)&lt;parseInt(num2)
+        js中默认的类型是String类型，若不转换类型，则会出错
+
+3、
+    var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];
+    typeof arr;   // return &quot;object&quot;
+    arr  instanceof Array // true
+    arr.constructor();  //[]
+
+4、js去空格
+    function String.prototype.Trim() { return this.replace(/(^/s*)|(/s*$)/g, &quot;&quot;); } // 去掉左右空格
+
+    function String.prototype.Ltrim() { return this.replace(/(^/s*)/g, &quot;&quot;); } // 去掉左空格
+
+    function String.prototype.Rtrim() { return this.replace(/(/s*$)/g, &quot;&quot;); }  // 去掉右空格
+
+5、验证参数是否为数字
+
+    function isNumber(n){
+        return !isNaN(parseFloat(n)) &amp;&amp; isFinite(n);
+    }
+
+6、获取一个数字数组的最大值和最小值
+    var  numbers = [5, 458 , 120 , -215 , 228 , 400 , 122205, -85411];
+    var maxInNumbers = Math.max.apply(Math, numbers);
+    var minInNumbers = Math.min.apply(Math, numbers);
+
+7、清空一个数组
+    var  numbers = [5, 458 , 120 , -215 , 228 , 400 , 122205, -85411];
+    var maxInNumbers = Math.max.apply(Math, numbers);
+    var minInNumbers = Math.min.apply(Math, numbers);
+</code></pre><p><strong>jquery小技巧</strong>    </p>
+<pre><code>1、选择或者不选页面上全部复选框    
+    var flag = false; 
+    $(&apos;a&apos;).click(function() {
+        $(&quot;input[type=checkbox]&quot;).attr(&quot;checked&quot;,!flag);
+        flag = !flag;
+    });
+
+2、在表单中禁用“回车键”
+
+    $(&quot;#form&quot;).keypress(function(e) {
+      if (e.which == 13) {
+        return false;
+      }
+    });
+
+3、清除所有的表单数据 （66666666666666）
+
+    function clearForm(form) {
+      $(&apos;:input&apos;, form).each(function() {
+        var type = this.type;
+        var tag = this.tagName.toLowerCase(); 
+        if (type == &apos;text&apos; || type == &apos;password&apos; || tag == &apos;textarea&apos;)
+          this.value = &quot;&quot;;
+        else if (type == &apos;checkbox&apos; || type == &apos;radio&apos;)
+          this.checked = false;
+        else if (tag == &apos;select&apos;)
+          this.selectedIndex = -1;
+      });
+    };
+
+4、表单中按钮的禁用和启用
+
+    禁用按钮：$(&quot;#somebutton&quot;).attr(&quot;disabled&quot;, true);
+
+    启动按钮：$(&quot;#submit-button&quot;).removeAttr(&quot;disabled&quot;);    
+
+
+5、高亮显示目前聚焦的输入框标示
+
+    $(&quot;form :input&quot;).focus(function() {
+      $(&quot;label[for=&apos;&quot; + this.id + &quot;&apos;]&quot;).addClass(&quot;labelfocus&quot;);
+    }).blur(function() {
+      $(&quot;label&quot;).removeClass(&quot;labelfocus&quot;);
+    });
+
+6、动态添加表单元素
+
+    $(&apos;#password1&apos;).change(function() {
+        $(&quot;#password1&quot;).append(&quot;&lt;input type=&apos;text&apos; name=&apos;password2&apos; id=&apos;password2&apos; /&gt;&quot;);
+    });
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/13/mybatis知识点/" itemprop="url">
                   mybatis相关
                 </a>
@@ -789,7 +1047,7 @@ ISOLATION_SERIALIZABLE    完全服从ACID的隔离级别，确保不发生脏�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -806,7 +1064,7 @@ ISOLATION_SERIALIZABLE    完全服从ACID的隔离级别，确保不发生脏�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
