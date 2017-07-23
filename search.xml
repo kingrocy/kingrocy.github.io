@@ -4,9 +4,11 @@
   
     
     <entry>
-      <title><![CDATA[了解<base href= "<%=basePath %>">的作用]]></title>
+      <title><![CDATA[了解html base标签的作用]]></title>
       <url>http://yoursite.com/2017/07/15/%E8%AF%A6%E8%A7%A3base%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BD%9C%E7%94%A8/</url>
       <content type="html"><![CDATA[<p>开发项目时，经常因为一些资源或请求的绝对路径或相对路径搞混，导致项目报错。</p>
+<p>在web项目中，不以”/“开始的相对路径，找资源，以当前资源的路径为基准.</p>
+<p>以/开始的相对路径，找资源，以服务器的路径为标准(<a href="http://localhost:8080)；" target="_blank" rel="external">http://localhost:8080)；</a></p>
 <p>通过使用<base href="">标签 可以帮助我们解决这个问题</p>
 <p>先给出代码</p>
 <pre><code>&lt;%
@@ -389,9 +391,9 @@ public class CustomDateSerializer extends JsonSerializer {
         
         <tags>
             
-            <tag> idea </tag>
-            
             <tag> git </tag>
+            
+            <tag> idea </tag>
             
         </tags>
         
@@ -672,31 +674,6 @@ public class AbstratorFactory {
     </entry>
     
     <entry>
-      <title><![CDATA[linux根据端口号杀进程]]></title>
-      <url>http://yoursite.com/2017/02/20/linux%E6%A0%B9%E6%8D%AE%E7%AB%AF%E5%8F%A3%E5%8F%B7%E6%9D%80%E8%BF%9B%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<h2 id="1-查找被占用的端口"><a href="#1-查找被占用的端口" class="headerlink" title="1.查找被占用的端口"></a><strong>1.查找被占用的端口</strong></h2><pre><code>netstat -tln  查看端口使用情况
-
-netstat -tln | grep 8060   查看端口8060的使用情况
-</code></pre><h2 id="2-查看端口属于哪个程序？端口被哪个进程占用"><a href="#2-查看端口属于哪个程序？端口被哪个进程占用" class="headerlink" title="2.查看端口属于哪个程序？端口被哪个进程占用?"></a><strong>2.查看端口属于哪个程序？端口被哪个进程占用?</strong></h2><pre><code>lsof -i:8060
-</code></pre><h2 id="3-杀掉占用端口的进程-根据pid杀掉"><a href="#3-杀掉占用端口的进程-根据pid杀掉" class="headerlink" title="3.杀掉占用端口的进程  根据pid杀掉"></a><strong>3.杀掉占用端口的进程  根据pid杀掉</strong></h2><pre><code>kill -9 进程id  
-</code></pre>]]></content>
-      
-        <categories>
-            
-            <category> Linux </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Linux </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[单例设计模式]]></title>
       <url>http://yoursite.com/2017/02/20/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
       <content type="html"><![CDATA[<h3 id="单线程下的单例模式：多线程下不安全"><a href="#单线程下的单例模式：多线程下不安全" class="headerlink" title="单线程下的单例模式：多线程下不安全"></a>单线程下的单例模式：多线程下不安全</h3><pre><code>class Singleton{
@@ -800,6 +777,31 @@ TestAlgorithm.Singleton2@2980e8cb
             <tag> 单例设计模式 </tag>
             
             <tag> 线程 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[linux根据端口号杀进程]]></title>
+      <url>http://yoursite.com/2017/02/20/linux%E6%A0%B9%E6%8D%AE%E7%AB%AF%E5%8F%A3%E5%8F%B7%E6%9D%80%E8%BF%9B%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h2 id="1-查找被占用的端口"><a href="#1-查找被占用的端口" class="headerlink" title="1.查找被占用的端口"></a><strong>1.查找被占用的端口</strong></h2><pre><code>netstat -tln  查看端口使用情况
+
+netstat -tln | grep 8060   查看端口8060的使用情况
+</code></pre><h2 id="2-查看端口属于哪个程序？端口被哪个进程占用"><a href="#2-查看端口属于哪个程序？端口被哪个进程占用" class="headerlink" title="2.查看端口属于哪个程序？端口被哪个进程占用?"></a><strong>2.查看端口属于哪个程序？端口被哪个进程占用?</strong></h2><pre><code>lsof -i:8060
+</code></pre><h2 id="3-杀掉占用端口的进程-根据pid杀掉"><a href="#3-杀掉占用端口的进程-根据pid杀掉" class="headerlink" title="3.杀掉占用端口的进程  根据pid杀掉"></a><strong>3.杀掉占用端口的进程  根据pid杀掉</strong></h2><pre><code>kill -9 进程id  
+</code></pre>]]></content>
+      
+        <categories>
+            
+            <category> Linux </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Linux </tag>
             
         </tags>
         
